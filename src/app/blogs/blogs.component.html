@@ -1,0 +1,54 @@
+<div class="blogs-container" [@fadeIn]="'in'">
+  <!-- Header Section -->
+  <section class="blogs-header">
+    <div class="container">
+      <div class="header-content" [@fadeInUp]="'in'">
+        <h1 class="page-title">All Blog Posts</h1>
+        <p class="page-subtitle">Explore all my thoughts, stories, and insights</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Posts Grid -->
+  <section class="blogs-grid-section">
+    <div class="container">
+      <div class="blog-grid" *ngIf="blogPosts$ | async as blogPostsData">
+        <a 
+          [routerLink]="['/blog', blogPost.sys.id]"
+          class="blog-card-link"
+          *ngFor="let blogPost of blogPostsData.items; let i = index"
+          [@slideInUp]="getAnimationState(i)">
+          
+          <article class="blog-card">
+            <div class="card-image">
+              <img [src]="blogPost.fields.featuredImage.fields.file.url" 
+                   [alt]="blogPost.fields.title"
+                   loading="lazy">
+              <div class="image-overlay"></div>
+            </div>
+            
+            <div class="card-content">
+              <div class="card-meta">
+                <span class="author">{{ blogPost.fields.author }}</span>
+                <span class="separator">•</span>
+                <span class="date">{{ formatDate(blogPost.sys.createdAt) }}</span>
+              </div>
+              
+              <h3 class="card-title">{{ blogPost.fields.title }}</h3>
+              <p class="card-summary">{{ blogPost.fields.summary }}</p>
+              
+              <div class="card-footer">
+                <span class="read-more">
+                  <span>Read Article</span>
+                  <svg class="arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </article>
+        </a>
+      </div>
+    </div>
+  </section>
+</div>

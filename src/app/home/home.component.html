@@ -1,0 +1,80 @@
+<div class="home-container">
+  <!-- Hero Section -->
+  <section class="hero-section" [@fadeInUp]="heroState">
+    <div class="hero-background">
+      <div class="gradient-overlay"></div>
+    </div>
+    
+    <div class="hero-content">
+      <div class="hero-text" [@slideInLeft]="heroState">
+        <span class="hero-subtitle">Welcome to</span>
+        <h1 class="hero-title">
+          <span class="hero-title-line">The Awesome</span>
+          <span class="hero-title-line hero-title-accent">Blog Post</span>
+        </h1>
+        <p class="hero-description">
+          Discover insights, stories, and knowledge through beautifully crafted articles
+          by Harsh Hajela
+        </p>
+        <div class="hero-cta">
+          <button class="cta-button" (click)="scrollToBlogs()">
+            <span>Explore Stories</span>
+            <svg class="cta-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M7 17l9.2-9.2M17 17V7H7"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    
+  </section>
+
+  <!-- Blog Posts Section -->
+  <section class="blog-section" id="blogs">
+    <div class="container">
+      <div class="section-header" [@fadeInUp]="blogsState">
+        <h2 class="section-title">Latest Articles</h2>
+        <p class="section-subtitle">Thoughts, stories, and ideas worth sharing</p>
+      </div>
+      
+      <div class="blog-grid" *ngIf="blogPosts$ | async as blogPostsData">
+        <a 
+          [routerLink]="['blog', blogPost.sys.id]"
+          class="blog-card-link"
+          *ngFor="let blogPost of blogPostsData.items; let i = index"
+          [@slideInUp]="getAnimationState(i)"
+          (mouseenter)="onCardHover(i)"
+          (mouseleave)="onCardLeave(i)">
+          
+          <article class="blog-card">
+            <div class="card-image">
+              <img [src]="blogPost.fields.featuredImage.fields.file.url" 
+                   [alt]="blogPost.fields.title"
+                   loading="lazy">
+              <div class="image-overlay"></div>
+            </div>
+            
+            <div class="card-content">
+              <div class="card-meta">
+                <span class="author">{{ blogPost.fields.author }}</span>
+                <span class="date">{{ formatDate(blogPost.sys.createdAt) }}</span>
+              </div>
+              
+              <h3 class="card-title">{{ blogPost.fields.title }}</h3>
+              <p class="card-summary">{{ blogPost.fields.summary }}</p>
+              
+              <div class="card-footer">
+                <span class="read-more">
+                  <span>Read Article</span>
+                  <svg class="arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </article>
+        </a>
+      </div>
+    </div>
+  </section>
+</div>

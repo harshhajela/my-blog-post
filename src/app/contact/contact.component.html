@@ -1,0 +1,154 @@
+<div class="contact-container" [@fadeIn]="'in'">
+  <!-- Header Section -->
+  <section class="contact-header">
+    <div class="container">
+      <div class="header-content" [@fadeInUp]="'in'">
+        <h1 class="page-title">Get In Touch</h1>
+        <p class="page-subtitle">Learn about this blog and connect with me</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="contact-content">
+    <div class="container">
+      <div class="content-grid">
+        <!-- About This Blog -->
+        <div class="info-card" [@slideInUp]="'in'">
+          <div class="card-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+              <polyline points="14,2 14,8 20,8" />
+              <line x1="16" y1="13" x2="8" y2="13" />
+              <line x1="16" y1="17" x2="8" y2="17" />
+              <polyline points="10,9 9,9 8,9" />
+            </svg>
+          </div>
+          <h3 class="card-title">About This Blog</h3>
+          <p class="card-description">
+            This blog is a modern web application built with cutting-edge technologies to deliver
+            exceptional performance and user experience. It showcases the power of combining
+            Angular's robust framework with cloud-based content management.
+          </p>
+        </div>
+
+        <!-- Tech Stack -->
+        <div class="info-card" [@slideInUp]="'in'">
+          <div class="card-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <polyline points="16 18 22 12 16 6" />
+              <polyline points="8 6 2 12 8 18" />
+            </svg>
+          </div>
+          <h3 class="card-title">Technology Stack</h3>
+          <div class="tech-stack">
+            <div class="tech-item">
+              <span class="tech-name">Angular 16</span>
+              <span class="tech-desc">Frontend Framework</span>
+            </div>
+            <div class="tech-item">
+              <span class="tech-name">Contentful CMS</span>
+              <span class="tech-desc">Content Management</span>
+            </div>
+            <div class="tech-item">
+              <span class="tech-name">AWS S3</span>
+              <span class="tech-desc">Static Website Hosting</span>
+            </div>
+            <div class="tech-item">
+              <span class="tech-name">TypeScript</span>
+              <span class="tech-desc">Type-Safe Development</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Architecture -->
+        <div class="info-card full-width" [@slideInUp]="'in'">
+          <div class="card-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+              <circle cx="9" cy="9" r="2" />
+              <path d="M21 15.5c-.3-1.8-1.5-3.5-3.2-4.2" />
+              <path d="M15 12h6" />
+            </svg>
+          </div>
+          <h3 class="card-title">Architecture & Workflow</h3>
+          <div class="architecture-flow">
+            <div class="flow-step">
+              <div class="step-number">1</div>
+              <div class="step-content">
+                <h4>Content Creation</h4>
+                <p>Blog posts are created and managed through Contentful's intuitive CMS interface</p>
+              </div>
+            </div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step">
+              <div class="step-number">2</div>
+              <div class="step-content">
+                <h4>Angular Frontend</h4>
+                <p>Angular fetches content via Contentful API and renders beautiful, animated pages</p>
+              </div>
+            </div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step">
+              <div class="step-number">3</div>
+              <div class="step-content">
+                <h4>AWS S3 Hosting</h4>
+                <p>Static site deployed to AWS S3 for fast, reliable, and scalable hosting</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="info-card" [@slideInUp]="'in'">
+          <div class="card-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+              <polyline points="22,6 12,13 2,6" />
+            </svg>
+          </div>
+          <h3 class="card-title">Connect With Me</h3>
+          <p class="card-description">
+            Passionate developer and content creator sharing insights about modern web development,
+            cloud technologies, and innovative solutions.
+          </p>
+          <div class="contact-links">
+            <a href="mailto:harsh.hajela@gmail.com" class="contact-link">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+              Email
+            </a>
+            <a href="https://www.linkedin.com/in/harsh-hajela/" class="contact-link" target="_blank">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                <rect x="2" y="9" width="4" height="12" />
+                <circle cx="4" cy="4" r="2" />
+              </svg>
+              LinkedIn
+            </a>
+          </div>
+        </div>
+
+        <!-- Features -->
+        <div class="info-card" [@slideInUp]="'in'">
+          <div class="card-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+            </svg>
+          </div>
+          <h3 class="card-title">Key Features</h3>
+          <ul class="features-list">
+            <li>Responsive design for all devices</li>
+            <li>Smooth animations and transitions</li>
+            <li>SEO-optimized structure</li>
+            <li>Content management via Contentful</li>
+            <li>Fast loading with AWS S3 CDN</li>
+            <li>Modern TypeScript development</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,66 @@
+<div class="blog-post-container" *ngIf="blogPost$ | async as blogPost" [@fadeIn]="'in'">
+  <!-- Back Button -->
+  <div class="back-button-container">
+    <button class="back-button" [routerLink]="['/']" [@slideInLeft]="'in'">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path d="M19 12H5M12 19l-7-7 7-7"/>
+      </svg>
+      <span>Back to Articles</span>
+    </button>
+  </div>
+
+  <!-- Hero Section -->
+  <header class="post-hero" [@fadeInUp]="'in'">
+    <div class="hero-image-container">
+      <img [src]="blogPost.fields.featuredImage.fields.file.url" 
+           [alt]="blogPost.fields.title"
+           loading="eager">
+    </div>
+  </header>
+
+  <!-- Post Header -->
+  <section class="post-header-section">
+    <div class="container">
+      <div class="post-header-content">
+        <div class="post-meta" [@slideInUp]="'in'">
+          <span class="author">{{ blogPost.fields.author }}</span>
+          <span class="separator">•</span>
+          <span class="date">{{ formatDate(blogPost.sys.createdAt) }}</span>
+          <span class="separator">•</span>
+          <span class="read-time">{{ calculateReadTime(blogPost.fields.content) }} min read</span>
+        </div>
+        
+        <h1 class="post-title" [@slideInUp]="'in'">{{ blogPost.fields.title }}</h1>
+        
+        <p class="post-summary" [@slideInUp]="'in'" *ngIf="blogPost.fields.summary">
+          {{ blogPost.fields.summary }}
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Article Content -->
+  <article class="post-article" [@fadeInUp]="'in'">
+    <div class="article-container">
+      <div class="article-content" [innerHTML]="blogPost.fields.content | toHtml"></div>
+      
+      <!-- Article Footer -->
+      <footer class="article-footer">
+        <div class="author-card">
+          <div class="author-info">
+            <h4 class="author-name">{{ blogPost.fields.author }}</h4>
+            <p class="author-bio">Content creator and passionate writer sharing insights and stories.</p>
+          </div>
+        </div>
+        
+        <div class="article-actions">
+          <button class="back-to-top" (click)="scrollToTop()" title="Back to top">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M12 19V5M5 12l7-7 7 7"/>
+            </svg>
+          </button>
+        </div>
+      </footer>
+    </div>
+  </article>
+</div>
