@@ -8,7 +8,7 @@
     "build:prod": "node scripts/set-env.js && ng build --configuration production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "analyze": "ng build --configuration production --stats-json && npx webpack-bundle-analyzer dist/my-blog-space/stats.json"
+    "analyze": "ng build --configuration production --stats-json"
   },
   "private": true,
   "dependencies": {
@@ -22,7 +22,7 @@
     "@angular/router": "^16.2.0",
     "@contentful/rich-text-html-renderer": "^16.3.0",
     "contentful": "^10.6.14",
-    "ngx-markdown": "^17.1.1",
+    "ngx-markdown": "^16.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"
@@ -38,7 +38,6 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
-    "typescript": "~5.1.3",
-    "webpack-bundle-analyzer": "^4.10.1"
+    "typescript": "~5.1.3"
   }
 }
