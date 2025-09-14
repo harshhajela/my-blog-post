@@ -21,14 +21,10 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
-      # - name: Run Tests
-      #   run: npm run test -- --watch=false --browsers=ChromeHeadless
+      - name: Run Tests
+        run: npm run test -- --watch=false --browsers=ChromeHeadless
 
       - name: Build Angular App
-        env:
-          CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
-          CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
-          CONTENTFUL_PREVIEW_KEY: ${{ secrets.CONTENTFUL_PREVIEW_KEY }}
         run: npm run build:prod
 
       - name: Sync S3 Bucket
