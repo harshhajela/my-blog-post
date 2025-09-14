@@ -1,11 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './header/header.component';
 
 describe('AppComponent', () => {
   beforeEach(() => TestBed.configureTestingModule({
-    imports: [RouterTestingModule],
-    declarations: [AppComponent]
+    imports: [RouterTestingModule, NoopAnimationsModule],
+    declarations: [AppComponent, HeaderComponent]
   }));
 
   it('should create the app', () => {
@@ -20,10 +22,10 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('my-blog-space');
   });
 
-  it('should render title', () => {
+  it('should render header', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('my-blog-space app is running!');
+    expect(compiled.querySelector('app-header')).toBeTruthy();
   });
 });
