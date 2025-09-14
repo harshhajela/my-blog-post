@@ -37,9 +37,10 @@
 }
 
 .brand-logo {
-  height: 40px;
+  height: 50px;
   width: auto;
   transition: transform 0.2s ease;
+  max-width: none;
 }
 
 .brand-name {
@@ -93,7 +94,7 @@
   }
 
   .brand-logo {
-    height: 35px;
+    height: 45px;
   }
 
   .brand-name {
@@ -173,7 +174,7 @@
 
 @media (max-width: 480px) {
   .brand-logo {
-    height: 30px;
+    height: 40px;
   }
 
   .header-nav {
