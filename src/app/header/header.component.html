@@ -1,7 +1,14 @@
 <header class="main-header" [@slideDown]="'in'">
   <div class="header-container">
     <div class="header-brand" [routerLink]="['/']">
-      <span class="brand-name">Harsh Hajela</span>
+      <img *ngIf="!(isDarkTheme$ | async)"
+           src="assets/harsh_hajela_logo_light.png"
+           alt="Harsh Hajela"
+           class="brand-logo">
+      <img *ngIf="isDarkTheme$ | async"
+           src="assets/harsh_hajela_logo_dark.png"
+           alt="Harsh Hajela"
+           class="brand-logo">
     </div>
     
     <div class="header-right">

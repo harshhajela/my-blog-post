@@ -36,6 +36,12 @@
   transform: translateY(-1px);
 }
 
+.brand-logo {
+  height: 40px;
+  width: auto;
+  transition: transform 0.2s ease;
+}
+
 .brand-name {
   font-family: 'Playfair Display', serif;
   font-size: 1.75rem;
@@ -85,15 +91,19 @@
   .header-container {
     padding: 0 1rem;
   }
-  
+
+  .brand-logo {
+    height: 35px;
+  }
+
   .brand-name {
     font-size: 1.5rem;
   }
-  
+
   .header-nav {
     gap: 1.5rem;
   }
-  
+
   .nav-link {
     font-size: 0.9rem;
   }
@@ -162,28 +172,32 @@
 }
 
 @media (max-width: 480px) {
+  .brand-logo {
+    height: 30px;
+  }
+
   .header-nav {
     gap: 1rem;
   }
-  
+
   .nav-link {
     font-size: 0.85rem;
   }
-  
+
   .toggle-track {
     width: 50px;
     height: 26px;
   }
-  
+
   .toggle-thumb {
     width: 22px;
     height: 22px;
   }
-  
+
   .toggle-thumb.dark {
     transform: translateX(24px);
   }
-  
+
   .theme-icon {
     width: 14px;
     height: 14px;
